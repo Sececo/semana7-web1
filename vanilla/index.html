@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA Notas Estudiantes</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Registro de notas</h1>
+        <nav>
+            <a href="#/">Formulario</a>
+            <a href="#/lista">Lista de Estudiantes</a>
+        </nav>
+    </header>
+
+    <main id="app"></main>
+
+    <footer>
+        <p>&copy;2024 Notas Estudiantes</p>
+    </footer>
+
+    <!-- templates -->
+    <template id="form-template">
+        <h2>Registrar Estudiantes</h2>
+        <form id="studentForm">
+            <label>Nombre del Estudiantes:</label>
+            <input type="text" id="name" required />
+            <label>Nota 1</label>
+            <input type="number" id="nota1" min="0" max="5" step="0.1" required />
+            <label>Nota 2</label>
+            <input type="number" id="nota2" min="0" max="5" step="0.1" required />
+            <label>Nota 3</label>
+            <input type="number" id="nota3" min="0" max="5" step="0.1" required />
+
+            <button type="submit">Guardar</button>
+        </form>
+        <p id="msg"></p>
+    </template>
+
+    <template id="list-template">
+        <h2>Lista de Estudiantes</h2>
+        <ul id="studentList"></ul>
+    </template>
+
+    <!-- elemento de la lista  -->
+
+    <template id="student-item-template">
+        <li>
+            <strong class="student-name"></strong>Promedio:
+            <span class="student-avg"></span>
+            <button class="delete-btn"> ✖️</button>
+        </li>
+    </template>
+
+    <template id="404-template">
+        <h2>404</h2>
+        <p>Page not found</p>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
